@@ -1,0 +1,237 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  background: linear-gradient(to bottom, #2c2a4a, #1a1a1a); /* Dark gradient for mystery */
+  color: #e0e0e0; /* Light gray for readability */
+  font-family: 'Lora', serif; /* Creative font for body */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Header styling */
+header {
+  text-align: center;
+  padding: 2rem 0;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-family: 'Cinzel', serif; /* Creative font for title */
+  font-size: 2.5rem;
+  color: #ffd700; /* Gold for prominence */
+  text-transform: uppercase;
+}
+
+/* Main content container */
+main {
+  margin-top: 80px; /* Offset for fixed header */
+  width: 100%;
+}
+
+/* Add Book section */
+.add-book {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.add-book h2 {
+  text-align: center;
+  color: #ffd700;
+  margin-bottom: 1rem;
+}
+
+.add-book form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.add-book label {
+  color: #ffd700;
+  font-size: 1rem;
+}
+
+.add-book input,
+.add-book select,
+.add-book textarea {
+  padding: 0.75rem;
+  font-size: 1rem;
+  background: #333;
+  color: #e0e0e0;
+  border: 1px solid #555;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.add-book input[type="file"] {
+  padding: 0.5rem;
+}
+
+.add-book button {
+  padding: 0.75rem;
+  background: #ffd700;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.add-book button:hover {
+  background: #d4af37;
+}
+
+/* Book List section */
+.book-list {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.book-list h2 {
+  text-align: center;
+  color: #ffd700;
+  margin-bottom: 1.5rem;
+}
+
+.books {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Book Card styling */
+.book-card {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+}
+
+.book-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.book-card .info {
+  margin-bottom: 1.5rem;
+}
+
+.book-card .book-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.book-card .book-notes {
+  font-size: 1rem;
+  color: #e0e0e0;
+  margin-bottom: 0.5rem;
+}
+
+.book-card .actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.book-card button,
+.book-card form button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.edit-btn {
+  background: #4caf50; /* Green for edit */
+  color: #fff;
+}
+
+.edit-btn:hover {
+  background: #45a049;
+}
+
+.delete-btn {
+  background: #f44336; /* Red for delete */
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background: #da190b;
+}
+
+.book-card .actions form {
+  display: inline;
+}
+
+.book-card input,
+.book-card textarea {
+  display: none; /* Hidden by default, shown via handler */
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  background: #333;
+  color: #e0e0e0;
+  border: 1px solid #555;
+  border-radius: 5px;
+}
+
+.book-card.editing input,
+.book-card.editing textarea {
+  display: block;
+}
+
+.book-card.editing .book-title,
+.book-card.editing .book-notes,
+.book-card.editing .edit-btn {
+  display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .add-book,
+  .book-list {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .books {
+    grid-template-columns: 1fr;
+  }
+
+  .book-card {
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+}
